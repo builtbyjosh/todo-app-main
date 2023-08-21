@@ -1,36 +1,15 @@
-import React from "react";
-import checkMark from "../images/icon-check.svg";
 import { useTodoContext } from "../context/TodoContext";
-type TodoDetails = {
-  text: string;
-  isChecked: boolean;
-  toggleCheck: React.ChangeEventHandler<HTMLInputElement>;
-};
+import TodoCheckBox from "./TodoCheckBox";
+import { TodoType } from "../types";
 
-const TodoCard = (todoDetails: TodoDetails) => {
-  const { text, isChecked, toggleCheck } = todoDetails;
-  const { isDarkMode } = useTodoContext();
+const TodoCard = (props: { todo: TodoType }) => {
+  const { id, text, isChecked } = props.todo;
+  const { toggleCheck } = useTodoContext();
 
   return (
-    <div>
-      <label className="flex items-center cursor-pointer">
-        <div className="w-6 h-6 border border-gray-300 rounded-full mr-2 flex items-center justify-center">
-          {isChecked && (
-            <img
-              src={checkMark}
-              alt="Checkmark"
-              className="w-4 h-4 text-green-500"
-            />
-          )}
-        </div>
-        <input
-          type="checkbox"
-          className="hidden"
-          checked={isChecked}
-          onChange={toggleCheck}
-        />
-      </label>
-      <h4>{text}</h4>
+    <div className="flex items-center m-2 py-2">
+      <TodoCheckBox isChecked={isChecked} onChange={() => toggleCheck(id)} />
+      <p className="ml-2">{text}</p>
     </div>
   );
 };
