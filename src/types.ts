@@ -1,7 +1,5 @@
-export type TodoType = {
-  todo: {
+export type TodoType = {  
     id: string;
     text: string;
-    isChecked: boolean;
-  };
+    isChecked: boolean;  
 };
