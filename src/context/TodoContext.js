@@ -8,6 +8,7 @@ export const TodoProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [todos, setTodos] = useState([]);
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [activeTodo, setActiveTodo] = useState("");
   console.log("context todos: ", todos);
   console.log("filtered: ", filteredTodos);
   const createNewTodo = (text) => {
@@ -28,7 +29,8 @@ export const TodoProvider = ({ children }) => {
   };
 
   const deleteTodo = (todoId) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.todoId !== todoId));
+    console.log("delete todo: ", todoId);
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
   };
 
   const clearCompletedTodos = () => {
@@ -53,6 +55,8 @@ export const TodoProvider = ({ children }) => {
         createNewTodo,
         setFilteredTodos,
         filteredTodos,
+        activeTodo,
+        setActiveTodo,
       }}
     >
       {children}
