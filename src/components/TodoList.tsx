@@ -10,7 +10,7 @@ const TodoList = () => {
     console.log(todos);
   }, [todos]);
   return (
-    <div className="w-full border rounded bg-white">
+    <div className="w-full drop-shadow-2xl rounded bg-lightTheme-very-light-gray dark:bg-darkTheme-very-dark-desaturated-blue">
       {filteredTodos.map((todo: TodoType) => (
         <TodoCard todo={todo} key={todo.id} />
       ))}

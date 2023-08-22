@@ -23,6 +23,7 @@ const TodoListControls = () => {
 
   useEffect(() => {
     setFilter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos, filterBy]);
 
   const activeTodosCount = todos.filter(
