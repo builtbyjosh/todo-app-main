@@ -9,7 +9,11 @@ import TodoList from "./components/TodoList";
 function App() {
   const { isDarkMode } = useTodoContext();
   return (
-    <div className="relative flex justify-center h-screen">
+    <div
+      className={`${
+        isDarkMode ? "dark " : ""
+      } relative flex justify-center h-screen bg-lightTheme-very-light-grayish-blue dark:bg-darkTheme-very-dark-blue `}
+    >
       <div className="absolute inset-0 z-0">
         <img src={isDarkMode ? darkDesktopBg : lightDesktopBg} alt="" />
       </div>
