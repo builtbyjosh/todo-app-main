@@ -6,8 +6,7 @@ module.exports = {
       colors: {
         primary: {
           "bright-blue": "hsl(220, 98%, 61%)",
-          "check-background":
-            "linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))",
+          "check-background": "linear-gradient(to right, 	#57ddff, 	#c058f3)",
         },
         neutral: {},
         lightTheme: {
@@ -30,4 +29,5 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  darkMode: "class",
 };
