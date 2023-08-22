@@ -36,7 +36,8 @@ export const TodoProvider = ({ children }) => {
   };
 
   const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+    setIsDarkMode((prevDarkMode) => !prevDarkMode);
+    document.documentElement.classList.toggle("dark");
   };
 
   return (
