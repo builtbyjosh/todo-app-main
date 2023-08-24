@@ -30,7 +30,7 @@ const TodoInput: React.FC = () => {
           type="text"
           value={inputText}
           onChange={handleInputChange}
-          className="pl-12 pr-4 py-2 w-full dark:bg-darkTheme-very-dark-desaturated-blue bg-lightTheme-very-light-gray  rounded focus:outline-none "
+          className="pl-12 pr-4 py-2 w-full text-lightTheme-dark-grayish-blue dark:bg-darkTheme-very-dark-desaturated-blue bg-lightTheme-very-light-gray  rounded focus:outline-none "
           placeholder="Create a new todo..."
         />
       </label>
