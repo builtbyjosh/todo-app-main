@@ -28,7 +28,7 @@ const TodoList = () => {
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className="w-full todo-list drop-shadow-2xl rounded bg-lightTheme-very-light-gray dark:bg-darkTheme-very-dark-desaturated-blue"
+            className="w-full min-h-screen todo-list drop-shadow-2xl rounded bg-lightTheme-very-light-gray dark:bg-darkTheme-very-dark-desaturated-blue flex flex-col"
           >
             {filteredTodos.map(
               (
@@ -52,7 +52,9 @@ const TodoList = () => {
                 </Draggable>
               )
             )}
-            <TodoListControls />
+            <div className="mt-auto">
+              <TodoListControls />
+            </div>
           </div>
         )}
       </Droppable>

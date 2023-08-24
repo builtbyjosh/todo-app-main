@@ -9,6 +9,8 @@ export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [filteredTodos, setFilteredTodos] = useState([]);
   const [activeTodo, setActiveTodo] = useState("");
+  const [filterBy, setFilterBy] = useState("all");
+
   console.log("context todos: ", todos);
   console.log("filtered: ", filteredTodos);
   const createNewTodo = (text) => {
@@ -42,6 +44,18 @@ export const TodoProvider = ({ children }) => {
     document.documentElement.classList.toggle("dark");
   };
 
+  const setFilter = () => {
+    let filteredTodos;
+    if (filterBy === "all") {
+      filteredTodos = todos;
+    } else if (filterBy === "active") {
+      filteredTodos = todos.filter((todo) => !todo.isChecked);
+    } else if (filterBy === "completed") {
+      filteredTodos = todos.filter((todo) => todo.isChecked);
+    }
+    setFilteredTodos(filteredTodos);
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -57,6 +71,9 @@ export const TodoProvider = ({ children }) => {
         filteredTodos,
         activeTodo,
         setActiveTodo,
+        filterBy,
+        setFilterBy,
+        setFilter,
       }}
     >
       {children}
