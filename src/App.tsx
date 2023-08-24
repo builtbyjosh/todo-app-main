@@ -20,6 +20,11 @@ function App() {
       <div className="relative z-10 w-1/2 mt-4 space-y-4">
         <TodoHeader />
         <TodoList />
+        <div>
+          <p className="justify-center text-center text-sm text-lightTheme-dark-grayish-blue">
+            Drag and drop to reorder list
+          </p>
+        </div>
       </div>
     </div>
   );
